@@ -11,6 +11,13 @@ class MyAppTheme{
       unselectedItemColor: AppColors.blackColor,
       showSelectedLabels: true,
       showUnselectedLabels: false,
+    ),
+    appBarTheme: AppBarTheme(
+      backgroundColor: AppColors.blackColor,
+      centerTitle: true,
+      iconTheme: IconThemeData(
+        color: AppColors.primaryDark
+      )
     )
   );
 }

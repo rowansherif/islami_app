@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app_practice/app_colors.dart';
+import 'package:islami_app_practice/model/sura_details_model.dart';
 
 class SuraList extends StatelessWidget{
-  int index;
-  String suraAr;
-  String SuraEn;
-  String ayaNumber;
+  SuraModel suraModel ;
 
-  SuraList({required this.index, required this.suraAr, required this.SuraEn, required this.ayaNumber});
+  SuraList({required this.suraModel});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +17,7 @@ class SuraList extends StatelessWidget{
             alignment: Alignment.center,
             children: [
               Image.asset('assets/images/vector.png'),
-              Text('$index',
+              Text('${suraModel.index+1}',
               style: TextStyle(
                 color: AppColors.whiteColor,
                 fontWeight: FontWeight.w500
@@ -34,19 +32,19 @@ class SuraList extends StatelessWidget{
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(SuraEn,
+                Text('${suraModel.suraEnglishName}',
                 style: TextStyle(
                   color: AppColors.whiteColor,
                   fontWeight: FontWeight.w500
                 ),),
-                Text('$ayaNumber Verses',
+                Text('${suraModel.ayaNumber} Verses',
                 style: TextStyle(
                   color: AppColors.whiteColor,
                   fontWeight: FontWeight.w500
                 ),),
               ],
             ),
-            Text(suraAr,
+            Text('${suraModel.suraArabicName}',
             style: TextStyle(
                   color: AppColors.whiteColor,
                   fontWeight: FontWeight.w500
